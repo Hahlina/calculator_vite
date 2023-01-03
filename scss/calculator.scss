@@ -1,0 +1,134 @@
+@import url("https://fonts.cdnfonts.com/css/sf-pro-display");
+@import "./buton.scss";
+@import "./vars.scss";
+
+.wrapper {
+  min-height: 100vh;
+  overflow-y: scroll;
+  padding: 20px 0;
+  display: grid;
+  place-content: center;
+  place-items: center;
+  background-color: $wrapperColor;
+  font-family: "SF Pro Display", sans-serif;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  @media screen and (min-width: 670px) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.calculator_wrapper {
+  display: grid;
+  width: 320px;
+  height: 568px;
+  border-radius: 20px;
+  grid-template-rows: 44px 181px 368px 20px;
+}
+
+.header {
+  border-radius: 20px 20px 0 0;
+  height: 44px;
+  background: $black;
+  color: $white;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  p {
+    margin: 0 0 0 30px;
+  }
+  font-size: 15px;
+}
+.mob_icons {
+  display: grid;
+  justify-content: end;
+  grid-template-columns: auto auto auto;
+  gap: 4px;
+  margin-right: 14px;
+}
+.rezult {
+  background: $darkBlueLighh;
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  font-size: 24px;
+  color: $white;
+  padding-right: 24px;
+  text-align: end;
+  .input_number {
+    span {
+      color: $red;
+    }
+  }
+  .final_rezult {
+    padding-bottom: 30px;
+    font-size: 32px;
+    font-weight: 500;
+  }
+}
+.number {
+  font-size: 25px;
+  background: $darkBlue;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  z-index: 10;
+  top: -18px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr) 25px;
+  color: $white;
+  place-items: center;
+}
+.sybol {
+  &:first-child {
+    color: $red;
+  }
+}
+.color {
+  color: $blue;
+}
+
+.line {
+  grid-row: 6;
+  grid-column: 1/5;
+  width: 124px;
+  height: 0px;
+  border: 1.5px solid #c4c4c4;
+  border-radius: 1px;
+  background-color: #c4c4c4;
+}
+.wrapper:nth-child(1) {
+  .calculator_wrapper:last-child {
+    .header {
+      background: $white;
+      color: black;
+      img {
+        filter: brightness(0) saturate(100%) invert(0%) sepia(3%)
+          saturate(7443%) hue-rotate(336deg) brightness(110%) contrast(96%);
+      }
+    }
+    .rezult {
+      background: $DarkWhite;
+      color: $black;
+    }
+    .number {
+      background: $azure;
+      button {
+        color: $black;
+        &:hover {
+          opacity: 0.5;
+        }
+        &:active {
+          color: $black;
+        }
+      }
+      .sybol {
+        &:first-child {
+          color: $red;
+        }
+      }
+      .color {
+        color: $blue;
+      }
+    }
+  }
+}
